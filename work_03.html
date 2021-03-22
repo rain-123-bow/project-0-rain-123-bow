@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>百度搜索</title>
+		<style>
+			.d1{
+				background-color: #eeeeee;
+				width: 100%;
+				height: 6em;
+				border: #eeeeee 1px solid;
+				overflow: hidden;
+			}
+			.d2{
+				width: 100%;
+				height: 9em;
+				border: #eeeeee 1px solid;
+				overflow: hidden;
+			}
+			.d3{
+				width: 100%;
+			}
+			.d4{
+				background-color: #eeeeee ;
+				width: 100%;
+			}
+			.s1{
+				display: inline-block;
+				width: 15%;
+				height: 100%;
+				padding-left: 1em;
+				font-size: 120%;
+				font-weight: 600;
+			}
+			.s2{
+				display: inline-block;
+				width: 27%;
+				font-size: 17px;
+			}
+			.s3{
+				display: inline-block;
+				width: 50%;
+				height: 100%;
+			}
+			.i2{
+				width: 60%;
+			}
+			.s4, .s5, .s6{
+				display: inline-block;
+			}
+			.s4{
+				width: 17%;
+				height: 100%;
+			}
+			.s5{
+				width: 27%;
+				font-size: 16px;
+			}
+			.s6{
+				width: 50%;
+				height: 100%;
+			}
+			.s7{
+				display: inline-block;
+				width: 20%;
+				height: 20%;
+			}
+			.i1{
+				width: 100%;
+				height: 100%;
+			}
+			.s8{
+				display: inline-block;
+				background-color: #d9e1f7;
+				width: 80%;
+				margin-left: -4.8px;
+				font-size: 120%;
+				font-weight: 600;
+			}
+			.s9{
+				display: block;
+				width: 14em;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.bt1{
+				background-color: white;
+			}
+			.inputs{
+				display: none;
+			}
+			label{
+				font-size: 10px;
+			}
+			a{
+				margin-left: 90%;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="work_01.html">返回首页</a>
+		<div class="d3">
+			<span class="s7">
+				<img class="i1" src="baidu_03.png" />
+			</span>
+			<span class="s8">
+				高级搜索
+			</span>
+		</div>
+		<form action="https://www.baidu.com/s" method="get">
+		<div class="d1">
+			<span class="s1">
+				搜索结果
+				<br />
+				<br />
+				<br />
+			</span>
+			<span class="s2">
+				包含以下<b>全部</b>的关键词
+				<br />
+				包含以下的<b>完整关键词</b>
+				<br />
+				包含以下<b>任意一个</b>关键词
+				<br />
+				<b>不包含</b>以下关键词
+			</span>
+			<span class="s3">
+				
+					<input class="i2" type="text" name="q1"/>
+					<button type="submit">百度一下</button>
+					<br />
+					<input class="i2" type="text" name="q2"/>
+					<br />
+					<input class="i2" type="text" name="q3"/>
+					<br />
+					<input class="i2" type="text" name="q4"/>
+				
+			</span>
+		</div>
+		<div class="d2">
+			<span class="s4">
+				<b>
+					搜索结果显示跳数
+					<br />
+					时间
+					<br />
+					语言
+					<br />
+					文档格式
+					<br />
+					关键词位置
+					<br />
+					站内搜索
+				</b>
+			</span>
+			<span class="s5">
+				选择搜索结果显示的条数
+				<br />
+				限定要搜索的网页的时间是
+				<br />
+				搜索网页的语言是
+				<br />
+				搜索网页的格式是
+				<br />
+				查询关键词位于
+				<br />
+				限定要搜索指定的网站是
+			</span>
+			<span class="s6">
+				<select id="ss1" onchange="selectShow()">
+					<option value="10">每页显示10条</option>
+					<option value="20">每页显示20条</option>
+					<option value="50">每页显示50条</option>
+				</select>
+				<input type="text" class="inputs" name="rn" id="id1" readonly="true"/>
+				<br />
+				<select id="ss2" onchange="selectShow()">
+					<option value="0">全部时间</option>
+					<option value="1">最近一天</option>
+					<option value="7">最近一周</option>
+					<option value="30">最近一月</option>
+					<option value="360">最近一年</option>
+				</select>
+				<input type="text" class="inputs" name="lm" id="id2" readonly="true"/>
+				<br />
+				<label>
+					<input name="ct" type="radio" value="0" checked="true"/>
+					全部语言
+				</label>
+				<label>
+					<input name="ct" type="radio" value="1"/>
+					仅在简体中文种
+				</label>
+				<label>
+					<input name="ct" type="radio" value="2"/>
+					仅在繁体中文中
+				</label>
+				<br />
+				<select id="ss3" onchange="selectShow()">
+					<option value="">所有网页和文件</option>
+					<option value="pdf">Abode Acrobat PDF(.pdf)</option>
+					<option value="doc">微软Word(.doc)</option>
+					<option value="xls">微软Excel(.xls)</option>
+					<option value="ppt">微软Powerpoint(.ppt)</option>
+					<option value="rtf">RTF文件(.rtf)</option>
+					<option value="0">所有格式</option>
+				</select>
+				<input type="text" class="inputs" name="ft" id="id3" readonly="true"/>
+				<br />
+				<label>
+					<input name="q5" type="radio" value="" checked="true"/>
+					网页的任何地方
+				</label>
+				<label>
+					<input name="q5" type="radio" value="1"/>
+					仅网页的标题中
+				</label>
+				<label>
+					<input name="q5" type="radio" value="2"/>
+					仅在网页的URL中
+				</label>
+				<br />
+				<input type="text" name="q6"/>
+				例如：baidu.com
+			</span>
+			<input class="inputs" type="text" name="tn" value="baiduadv"/>
+		</div>
+		</form>
+		<div class="d4">
+			<span class="s9">@2021 Baidu Super-version</span>
+		</div>
+	</body>
+	<script>
+		window.onload=selectShow;
+		function selectShow(){
+			document.getElementById('id1').value=document.getElementById('ss1').value;
+			document.getElementById('id2').value=document.getElementById('ss2').value;
+			document.getElementById('id3').value=document.getElementById('ss3').value;
+		}
+	</script>
+</html>
